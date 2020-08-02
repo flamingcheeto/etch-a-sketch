@@ -1,0 +1,14 @@
+#gridContainer {
+    display: grid;
+    border: 2px solid black;
+    width: 960px;
+    height: 960px;
+}
+
+.gridColumn {
+    border-right: 2px solid black;
+}
+
+.gridRow {
+    border-bottom: 2px solid black;
+}
