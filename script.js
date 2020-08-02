@@ -33,5 +33,18 @@ function createGrid(containerID, size) {
     
 }
 
+function clearGrid(containerID) {
+    let container = document.querySelector(`#${containerID}`);
+    while(container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+    }
+}
+
+let resetButton = document.querySelector('#resetButton');
+resetButton.addEventListener("click", function () {
+    clearGrid('gridContainer');
+    let newGridSize = +prompt("How big do you want your new grid to be?", "");
+    createGrid('gridContainer', newGridSize);
+})
 
 createGrid('gridContainer', 16);
