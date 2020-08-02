@@ -14,7 +14,24 @@ function createGrid(containerID, size) {
         row.classList.add("gridRow");
         container.appendChild(row);
     }
+
+    for (let i = 1; i <= size; i++) {
+        for (let j = 1; j <= size; j++) {
+            let div = document.createElement('div');
+            div.style.cssText = `grid-area: ${i} / ${j} / ${i + 1} / ${j + 1};`
+            div.classList.add("gridElement");
+            container.appendChild(div);
+        }
+    }
+
+    let nodeList = document.querySelectorAll('.gridElement');
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].addEventListener("mouseenter", function () {
+            nodeList[i].classList.add("hovered");
+        })
+    }
+    
 }
 
-createGrid('gridContainer', 4);
 
+createGrid('gridContainer', 16);

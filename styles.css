@@ -12,3 +12,11 @@
 .gridRow {
     border-bottom: 2px solid black;
 }
+
+.gridElement {
+    background-color: transparent;
+}
+
+.hovered {
+    background-color: black;
+}
